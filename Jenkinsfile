@@ -24,7 +24,7 @@ pipeline {
         // Chemin du package.json dans lequel on modifie la version
         VERSION_LOCATION = "package.json"
         ROCKETCHAT_PREPROD_CHAN = "jenkins_mobile"
-        PROJECT_NAME = "cordova-plugin-fcm-with-dependecy-updated"
+        PROJECT_NAME = "@penbase/cordova-plugin-fcm-with-dependecy-updated"
     }
 
     options {
