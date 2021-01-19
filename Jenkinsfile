@@ -15,12 +15,10 @@ pipeline {
         // Github variables
         GITHUB_PROJECT = "Penbase/cordova-plugin-fcm-with-dependecy-updated"
         GITHUB_TOKEN = credentials('Github-token')
-
         // Build variables
         FULL_BUILD = "$FULL_BUILD"
         IS_PR = "$BRANCH_NAME".startsWith("PR-")
         PROJECT_VERSION = "$BRANCH_NAME".replaceAll("[^a-zA-Z0-9_]", "_")
-
         // Chemin du package.json dans lequel on modifie la version
         VERSION_LOCATION = "package.json"
         ROCKETCHAT_PREPROD_CHAN = "jenkins_mobile"
