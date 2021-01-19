@@ -9,7 +9,7 @@ def FULL_BUILD = currentBuild.rawBuild.getCause(jenkins.branch.BranchEventCause)
 //currentBuild.description = FULL_BUILD ? '<span style="color: red"><b>FULL BUILD</b> (with integration tests)</span>' : 'SIMPLE BUILD (no integration tests)'
 
 pipeline {
-    agent any
+    agent {'slave-mac-sylvain'}
 
     environment {
         // Github variables
