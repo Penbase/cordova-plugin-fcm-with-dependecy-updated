@@ -5,7 +5,7 @@
   "description": "Google Firebase Cloud Messaging Cordova Push Plugin fork with dependecy updated",
   "license": "MIT",
   "main": "./FCMPluginOnIonic.js",
-  "repo": "https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated",
+  "repo": "https://github.com/Penbase/cordova-plugin-fcm-with-dependecy-updated",
   "issue": "https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated/issues",
   "author": "André Augusto Tissot",
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated"
+    "url": "https://github.com/Penbase/cordova-plugin-fcm-with-dependecy-updated"
   },
   "keywords": [
     "ecosystem:cordova",

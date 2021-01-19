@@ -17,7 +17,7 @@ export class FCM {
     public static plugin: string = 'cordova-plugin-fcm-with-dependecy-updated'
     public static pluginRef: string = 'FCM'
     public static repo: string =
-        'https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated'
+        'https://github.com/Penbase/cordova-plugin-fcm-with-dependecy-updated'
     public static platforms: string[] = ['Android', 'iOS']
     public static installed: () => boolean = IonicNativePlugin.installed
     public static getPlugin: () => any = IonicNativePlugin.getPlugin
