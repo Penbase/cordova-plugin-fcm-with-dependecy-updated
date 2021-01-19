@@ -1,7 +1,7 @@
-import type { IChannelConfiguration } from './IChannelConfiguration'
-import type { IRequestPushPermissionOptions } from './IRequestPushPermissionOptions'
-import type { INotificationPayload } from './INotificationPayload'
-import type { IDisposable } from './IDisposable'
+import { IChannelConfiguration } from './IChannelConfiguration'
+import { IRequestPushPermissionOptions } from './IRequestPushPermissionOptions'
+import { INotificationPayload } from './INotificationPayload'
+import { IDisposable } from './IDisposable'
 import { execAsPromise } from './execAsPromise'
 import { asDisposableListener } from './eventAsDisposable'
 import { bridgeNativeEvents } from './bridgeNativeEvents'
@@ -164,8 +164,14 @@ export class FCMPlugin {
         if (window.cordova.platformId !== 'ios') {
             return Promise.resolve(true)
         }
-        const ios9SupportTimeout = options?.ios9Support?.timeout ?? 10
-        const ios9SupportInterval = options?.ios9Support?.interval ?? 0.3
+        let ios9SupportTimeout: number = 10
+        if (options && options.ios9Support) {
+            ios9SupportTimeout = options.ios9Support.timeout!;
+        }
+        let ios9SupportInterval = 0.3;
+        if (options && options.ios9Support) {
+            ios9SupportInterval = options.ios9Support.interval!;
+        } 
 
         return execAsPromise('requestPushPermission', [ios9SupportTimeout, ios9SupportInterval])
     }

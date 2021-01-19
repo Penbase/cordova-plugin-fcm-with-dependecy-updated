@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core'
 import { Plugin } from '@ionic-native/core'
 import { Observable, Subject } from 'rxjs'
-import type { FCMPlugin } from '../../../typings/FCMPlugin'
-import type { IChannelConfiguration } from '../../../typings/IChannelConfiguration'
-import type { IRequestPushPermissionOptions } from '../../../typings/IRequestPushPermissionOptions'
-import type { INotificationPayload } from '../../../typings/INotificationPayload'
+import { FCMPlugin } from '../../../typings/FCMPlugin'
+import { IChannelConfiguration } from '../../../typings/IChannelConfiguration'
+import { IRequestPushPermissionOptions } from '../../../typings/IRequestPushPermissionOptions'
+import { INotificationPayload } from '../../../typings/INotificationPayload'
 
 declare namespace window {
     export let FCM: FCMPlugin
