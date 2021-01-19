@@ -37,6 +37,7 @@ pipeline {
                 script {
                   if (env.TAG_NAME) {
                     updateVersion(env.TAG_NAME);
+                    sh "npm run build"
                     sh "npm publish"
                   } else {
                     sh "echo No tag found. There is nothing to build and publish"
