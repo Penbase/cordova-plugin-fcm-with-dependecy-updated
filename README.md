@@ -1,3 +1,12 @@
+# Fork Penbase
+
+The original plugin has been forked. 
+
+There is a single change : TypecSript version was downgrade from 4 to 3.4.0 for using the plugin with Ionic 4 Angular 8 project.
+
+Caution : the transpilations steps no working from Jenkins. So new version need to be released from dev computer. 
+
+
 # Google Firebase Cloud Messaging Cordova Push Plugin
 > Extremely easy plug&play push notification plugin for Cordova applications with Google Firebase FCM.
 
