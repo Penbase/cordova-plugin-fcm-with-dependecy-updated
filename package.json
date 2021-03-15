@@ -1,12 +1,12 @@
 {
-    "version": "7.7.0",
-    "name": "cordova-plugin-fcm-with-dependecy-updated",
+    "version": "7.7.1-penbase-beta-2",
+    "name": "@penbase/cordova-plugin-fcm-with-dependecy-updated",
     "cordova_name": "Cordova FCM Push Plugin",
     "description": "Google Firebase Cloud Messaging Cordova Push Plugin fork with dependecy updated",
     "license": "MIT",
     "main": "www/FCMPlugin.js",
     "typings": "typings/index.d.ts",
-    "repo": "https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated",
+    "repo": "https://github.com/Penbase/cordova-plugin-fcm-with-dependecy-updated",
     "issue": "https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated/issues",
     "author": "André Augusto Tissot",
     "scripts": {
@@ -18,7 +18,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated"
+        "url": "https://github.com/Penbase/cordova-plugin-fcm-with-dependecy-updated"
     },
     "keywords": [
         "ecosystem:cordova",
@@ -43,6 +43,6 @@
         "tslint-microsoft-contrib": "^6.2.0"
     },
     "dependencies": {
-        "typescript": "^4.1.2"
+        "typescript": "3.4.3"
     }
 }

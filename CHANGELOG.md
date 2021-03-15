@@ -2,6 +2,10 @@
 
 ## Version 7
 
+### Version 7.7.1-penbase (19/01/2021)
+
+Downgrade TypecSript version from 4 to 3.4.0 for using the plugin with Ionic 4 Angular 8 project
+
 ### Version 7.7.0 (11/12/2020)
 
 Downgraded Cordova and Cordova-Android minimal required versions.

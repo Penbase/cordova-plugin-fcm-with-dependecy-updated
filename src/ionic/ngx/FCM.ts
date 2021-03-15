@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core'
 import { Observable, Subject } from 'rxjs'
 import { IonicNativePlugin } from '@ionic-native/core'
-import type { FCMPlugin } from '../../www/FCMPlugin'
-import type { IChannelConfiguration } from '../../www/IChannelConfiguration'
-import type { INotificationPayload } from '../../www/INotificationPayload'
-import type { IRequestPushPermissionOptions } from '../../www/IRequestPushPermissionOptions'
+import { FCMPlugin } from '../../www/FCMPlugin'
+import { IChannelConfiguration } from '../../www/IChannelConfiguration'
+import { INotificationPayload } from '../../www/INotificationPayload'
+import { IRequestPushPermissionOptions } from '../../www/IRequestPushPermissionOptions'
 
 declare namespace window {
     export let FCM: FCMPlugin
@@ -17,7 +17,7 @@ export class FCM {
     public static plugin: string = 'cordova-plugin-fcm-with-dependecy-updated'
     public static pluginRef: string = 'FCM'
     public static repo: string =
-        'https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated'
+        'https://github.com/Penbase/cordova-plugin-fcm-with-dependecy-updated'
     public static platforms: string[] = ['Android', 'iOS']
     public static installed: () => boolean = IonicNativePlugin.installed
     public static getPlugin: () => any = IonicNativePlugin.getPlugin

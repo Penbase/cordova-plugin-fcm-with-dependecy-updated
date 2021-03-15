@@ -79,7 +79,7 @@ DESC
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/andrehtissot/cordova-plugin-fcm-with-dependecy-updated.git", :tag => "v#{spec.version}" }
+  spec.source       = { :git => "https://github.com/Penbase/cordova-plugin-fcm-with-dependecy-updated.git", :tag => "v#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

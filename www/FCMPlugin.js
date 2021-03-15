@@ -79,12 +79,17 @@ var FCMPlugin = (function () {
         return asDisposableListener(this.eventTarget, 'tokenRefresh', callback, options);
     };
     FCMPlugin.prototype.requestPushPermission = function (options) {
-        var _a, _b, _c, _d;
         if (window.cordova.platformId !== 'ios') {
             return Promise.resolve(true);
         }
-        var ios9SupportTimeout = (_b = (_a = options === null || options === void 0 ? void 0 : options.ios9Support) === null || _a === void 0 ? void 0 : _a.timeout) !== null && _b !== void 0 ? _b : 10;
-        var ios9SupportInterval = (_d = (_c = options === null || options === void 0 ? void 0 : options.ios9Support) === null || _c === void 0 ? void 0 : _c.interval) !== null && _d !== void 0 ? _d : 0.3;
+        var ios9SupportTimeout = 10;
+        if (options && options.ios9Support) {
+            ios9SupportTimeout = options.ios9Support.timeout;
+        }
+        var ios9SupportInterval = 0.3;
+        if (options && options.ios9Support) {
+            ios9SupportInterval = options.ios9Support.interval;
+        }
         return execAsPromise('requestPushPermission', [ios9SupportTimeout, ios9SupportInterval]);
     };
     FCMPlugin.prototype.subscribeToTopic = function (topic) {
