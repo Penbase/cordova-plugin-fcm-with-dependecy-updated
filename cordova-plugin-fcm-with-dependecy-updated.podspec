@@ -15,8 +15,8 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "cordova-plugin-fcm-with-dependecy-updated"
-  spec.version      = "7.7.0"
+  spec.name         = "@penbase/cordova-plugin-fcm-with-dependecy-updated"
+  spec.version      = "7.8.1-penbase"
   spec.summary      = "Google FCM Push Notifications Cordova Plugin"
 
   # This description is used to generate tags and improve search results.
