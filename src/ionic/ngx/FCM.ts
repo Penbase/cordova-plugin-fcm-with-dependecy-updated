@@ -14,7 +14,7 @@ declare namespace window {
 @Injectable()
 export class FCM {
     public static pluginName: string = 'FCM'
-    public static plugin: string = 'cordova-plugin-fcm-with-dependecy-updated'
+    public static plugin: string = '@penbase/cordova-plugin-fcm-with-dependecy-updated'
     public static pluginRef: string = 'FCM'
     public static repo: string =
         'https://github.com/Penbase/cordova-plugin-fcm-with-dependecy-updated'
