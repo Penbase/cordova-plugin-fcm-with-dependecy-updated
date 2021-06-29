@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "@penbase/cordova-plugin-fcm-with-dependecy-updated"
-  spec.version      = "7.8.1-penbase"
+  spec.version      = "7.8.2-penbase"
   spec.summary      = "Google FCM Push Notifications Cordova Plugin"
 
   # This description is used to generate tags and improve search results.
