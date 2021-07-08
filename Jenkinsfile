@@ -33,16 +33,17 @@ pipeline {
         stage('Build library and publish') {
             steps {
                 script {
-                    sh 'npm run build'
                     if (env.TAG_NAME) {
                         updateVersion(env.TAG_NAME)
+                    }
+                    sh 'npm run build'
+                    if (env.TAG_NAME) {
                         sh 'npm publish'
-                  } else {
-                        sh 'echo No tag found. There is nothing to build and publish'
                     }
                 }
             }
         }
+    }
 
         stage('Deploy result') {
             when {
@@ -68,7 +69,7 @@ pipeline {
                 }
             }
         }
-    }
+}
     post {
         success {
             script {
@@ -87,17 +88,13 @@ pipeline {
 
 def updateVersion(String newVersion) {
     updateVersionJSONFile(newVersion, 'package.json')
-    updateVersionJSONFile(newVersion, 'ionic/package.json')
-    updateVersionJSONFile(newVersion, 'ionic/ngx/package.json')
-    updateVersionJSONFile(newVersion, 'ionic/v4/package.json')
-    updateVersionXMLFile(newVersion, 'plugin.xml')
 }
 
 def updateVersionJSONFile(String newVersion, String jsonFilePath) {
     sh 'echo updateVersion method'
     /* groovylint-disable-next-line VariableTypeRequired */
     def packageJson = readJSON file: jsonFilePath
-    sh 'echo packageJson.version=' + jsonFilePath.version
+    sh 'echo packageJson.version=' + packageJson.version
     if (newVersion.startsWith('v')) {
         /* groovylint-disable-next-line ParameterReassignment, UnnecessarySubstring */
         newVersion = newVersion.substring(1)
@@ -105,12 +102,4 @@ def updateVersionJSONFile(String newVersion, String jsonFilePath) {
     }
     packageJson.version = newVersion
     writeJSON file: jsonFilePath, json: packageJson
-}
-
-def updateVersionXMLFile(String newVersion, String xmlFilePath){
-    def xml = readFile xmlFilePath
-    def rootNode = new XmlParser().parseText(xml)
-    print rootNode['version']
-    rootNode['version'] = newVersion
-    print rootNode['version']
 }
