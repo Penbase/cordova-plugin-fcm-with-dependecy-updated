@@ -1,5 +1,5 @@
 #!groovy
-/* groovylint-disable MethodReturnTypeRequired, NoDef, VariableTypeRequired */
+/* groovylint-disable LineLength, MethodReturnTypeRequired, NoDef, VariableTypeRequired */
 @Library('jenkins-library@master') _
 import com.penbase.rocketchat.RocketChat
 import jenkins.plugins.rocketchatnotifier.*
@@ -62,14 +62,14 @@ pipeline {
 
                     def chan = ROCKETCHAT_PREPROD_CHAN
                     if (RocketChat.sendMessage(res, chan)) {
-                        println 'Message sent to rocketchat into #' + chan
+                    println 'Message sent to rocketchat into #' + chan
                     } else {
-                        println 'Unable to send message to rocketchat into #' + chan
+                    println 'Unable to send message to rocketchat into #' + chan
                     }
                 }
             }
         }
-}
+
     post {
         success {
             script {
