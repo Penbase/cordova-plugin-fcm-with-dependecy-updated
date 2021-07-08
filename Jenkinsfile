@@ -24,7 +24,7 @@ pipeline {
         PROJECT_VERSION = "$BRANCH_NAME".replaceAll('[^a-zA-Z0-9_]', '_')
         // Chemin du package.json dans lequel on modifie la version
         ROCKETCHAT_PREPROD_CHAN = 'jenkins_mobile'
-        PROJECT_NAME = '@penbase/cordova-plugin-fcm-with-dependecy-updated'
+        PROJECT_NAME = 'penbase-cordova-plugin-fcm-with-dependecy-updated'
     }
 
     options {
