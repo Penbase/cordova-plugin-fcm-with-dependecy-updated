@@ -4,6 +4,8 @@
 import com.penbase.rocketchat.RocketChat
 import jenkins.plugins.rocketchatnotifier.*
 import hudson.model.*
+import com.penbase.rocketchat.RocketChat
+import jenkins.plugins.rocketchatnotifier.*
 
 // à laisser en dehors de la pipeline
 def FULL_BUILD = currentBuild.rawBuild.getCause(jenkins.branch.BranchEventCause) == null && currentBuild.rawBuild.getCause(org.jenkinsci.plugins.workflow.cps.replay.ReplayCause)?.getOriginal()?.getCause(jenkins.branch.BranchEventCause) == null
@@ -43,7 +45,6 @@ pipeline {
                 }
             }
         }
-    }
 
         stage('Deploy result') {
             when {
@@ -55,33 +56,11 @@ pipeline {
                 script {
                     def res = ''
                     res += ':email: Mise en production de *' + PROJECT_NAME + " v${env.TAG_NAME}* terminée"
-                    res += "\nDependence npm : `\"@penbase/cordova-plugin-fcm-with-dependecy-updated\" : \"${env.TAG_NAME}\"`"
-                    println res
-
-                    //Publish to rocket chat !
-
+                    res += "\nDependence npm : `\"penbase-cordova-plugin-fcm-with-dependecy-updated\" : \"${env.TAG_NAME}\"`"
                     def chan = ROCKETCHAT_PREPROD_CHAN
-                    if (RocketChat.sendMessage(res, chan)) {
-                    println 'Message sent to rocketchat into #' + chan
-                    } else {
-                    println 'Unable to send message to rocketchat into #' + chan
-                    }
+                    RocketChat.sendMessage(res, chan)
                 }
             }
-        }
-
-    post {
-        success {
-            script {
-                withCredentials([[$class: 'SSHUserPrivateKeyBinding', credentialsId: '1cc7647c-c0b0-4a9b-ae3b-9d8832a6ef7d', usernameVariable: 'USERNAME', keyFileVariable: 'IDENTITY_FILE']]) {
-                    withEnv(["GIT_SSH_COMMAND=ssh -i $IDENTITY_FILE"]) {
-                        sh 'echo succeeded'
-                    }
-                }
-            }
-        }
-        failure {
-            emailext body: '$DEFAULT_CONTENT', recipientProviders: [[$class: 'CulpritsRecipientProvider']], subject: '$DEFAULT_SUBJECT'
         }
     }
 }
