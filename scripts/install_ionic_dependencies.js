@@ -5,7 +5,7 @@ const shouldInstallIonicDependencies = function () {
     const fs = require('fs');
     const packageFilePath = `${process.cwd()}/../../../package.json`;
     if (!helpers.fileExists(packageFilePath)) {
-        helpers.logWarning('package.json was not found.');
+        helpers.logWarning('package.json was not found at path '+packageFilePath);
         helpers.logWarning('Ionic dependencies omission cannot be safely skipped.');
         return true;
     }
@@ -40,7 +40,7 @@ const installIonicDependencies = function () {
     } catch (error) {
         helpers.logError(`Failed change directory to ${fullDestPath}!`, error);
         helpers.logError(
-            `Please run \`cd node_modules/@penbase/cordova-plugin-fcm-with-dependecy-updated/${DEST_PATH}; npm install\` manually`
+            `Please run \`cd node_modules/penbase-cordova-plugin-fcm-with-dependecy-updated/${DEST_PATH}; npm install\` manually`
         );
         return;
     }
@@ -51,7 +51,7 @@ const installIonicDependencies = function () {
         .catch(function (e) {
             helpers.logError('Failed to auto install Ionic dependencies!', e);
             helpers.logError(
-                `Please run \`cd node_modules/@penbase/cordova-plugin-fcm-with-dependecy-updated/${DEST_PATH}; npm install\` manually`
+                `Please run \`cd node_modules/penbase-cordova-plugin-fcm-with-dependecy-updated/${DEST_PATH}; npm install\` manually`
             );
         })
         .then(function (output) {
