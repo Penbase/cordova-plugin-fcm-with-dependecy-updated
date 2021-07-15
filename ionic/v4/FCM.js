@@ -71,7 +71,7 @@ FCM = __decorate(
     [
         Plugin({
             pluginName: 'FCM',
-            plugin: '@penbase/cordova-plugin-fcm-with-dependecy-updated',
+            plugin: 'penbase-cordova-plugin-fcm-with-dependecy-updated',
             pluginRef: 'FCM',
             repo: 'https://github.com/Penbase/cordova-plugin-fcm-with-dependecy-updated',
             platforms: ['Android', 'iOS']
