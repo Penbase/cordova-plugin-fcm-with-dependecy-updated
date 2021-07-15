@@ -38,6 +38,7 @@ pipeline {
                     if (env.TAG_NAME) {
                         updateVersion(env.TAG_NAME)
                     }
+                    sh 'npm ci'
                     sh 'npm run build'
                     if (env.TAG_NAME) {
                         sh 'npm publish'
