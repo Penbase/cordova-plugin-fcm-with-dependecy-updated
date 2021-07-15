@@ -2,6 +2,11 @@
 
 ## Version 7
 
+
+### Version 7.8.3 (15/07/2020)
+Fix update cordova plugin id
+Create script for updating version from package.json version. This script update plugin.xml file and all sub-package.json file.
+
 ### Version 7.8.2-penbase (29/06/2020)
 Update cordova plugin id to penbase-cordova-plugin-fcm-with-dependecy-updated
 
