@@ -2,6 +2,9 @@
 
 ## Version 7
 
+### Version 7.8.2-penbase (29/06/2020)
+Update cordova plugin id to penbase-cordova-plugin-fcm-with-dependecy-updated
+
 ### Version 7.8.1-penbase (30/04/2020)
 Update with 7.8.0 feats and fixes
 
